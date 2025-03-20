@@ -212,7 +212,7 @@ def Depression_survey():
         q28 = change_var(q28)
 
         # max-min scaling 
-        df = pd.read_csv('.\static\model\max_min_values.csv', index_col=0)
+        df = pd.read_csv(r'.\static\model\max_min_values.csv', index_col=0)
 
 
         # Make DataFrame for model
@@ -323,7 +323,7 @@ def Stress_survey():
         q28 = change_var(q28)
 
         # max-min scaling 
-        df = pd.read_csv('.\static\model\max_min_values.csv', index_col=0)
+        df = pd.read_csv(r'.\static\model\max_min_values.csv', index_col=0)
         new_names = ['Q1A', 'Q6A', 'Q8A', 'Q11A', 'Q12A', 'Q14A', 'Q18A', 'Q22A', 'Q27A',
        'Q29A', 'Q32A', 'Q33A', 'Q35A', 'Q39A']
         old_names = [
@@ -450,7 +450,7 @@ def Anxiety_survey():
         q28 = change_var(q28)
 
         # max-min scaling 
-        df = pd.read_csv('.\static\model\max_min_values.csv', index_col= 0)
+        df = pd.read_csv(r'.\static\model\max_min_values.csv', index_col= 0)
         new_names = ['Q2A', 'Q4A', 'Q7A', 'Q9A', 'Q15A', 'Q19A', 'Q20A', 'Q23A', 'Q25A',
        'Q28A', 'Q30A', 'Q36A', 'Q40A', 'Q41A']
         old_names = [
