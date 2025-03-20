@@ -212,7 +212,7 @@ def Depression_survey():
         q28 = change_var(q28)
 
         # max-min scaling 
-        df = pd.read_csv(r'.\static\model\max_min_values.csv', index_col=0)
+        df = pd.read_csv(r'static\model\max_min_values.csv', index_col=0)
 
 
         # Make DataFrame for model
@@ -323,7 +323,7 @@ def Stress_survey():
         q28 = change_var(q28)
 
         # max-min scaling 
-        df = pd.read_csv(r'.\static\model\max_min_values.csv', index_col=0)
+        df = pd.read_csv(r'static\model\max_min_values.csv', index_col=0)
         new_names = ['Q1A', 'Q6A', 'Q8A', 'Q11A', 'Q12A', 'Q14A', 'Q18A', 'Q22A', 'Q27A',
        'Q29A', 'Q32A', 'Q33A', 'Q35A', 'Q39A']
         old_names = [
@@ -450,7 +450,7 @@ def Anxiety_survey():
         q28 = change_var(q28)
 
         # max-min scaling 
-        df = pd.read_csv(r'.\static\model\max_min_values.csv', index_col= 0)
+        df = pd.read_csv(r'static\model\max_min_values.csv', index_col= 0)
         new_names = ['Q2A', 'Q4A', 'Q7A', 'Q9A', 'Q15A', 'Q19A', 'Q20A', 'Q23A', 'Q25A',
        'Q28A', 'Q30A', 'Q36A', 'Q40A', 'Q41A']
         old_names = [
@@ -507,7 +507,7 @@ def Anxiety_survey():
 @app.route('/survey_intro', methods=['GET', 'POST'])
 def survey_intro():
 # Create the choropleth map
-    plotly1 = pd.read_csv(r'.\static\model\first_plot.csv')
+    plotly1 = pd.read_csv(r'static\model\first_plot.csv')
 
     fig1 = px.choropleth(plotly1, 
                         locations='country',
@@ -531,7 +531,7 @@ def survey_intro():
     graphJSON1 = fig1.to_json()
 ##############################################################
 
-    plotly2 = pd.read_csv(r'.\static\model\second_plot.csv')
+    plotly2 = pd.read_csv(r'static\model\second_plot.csv')
 
 # Create a horizontal bar plot
     color_scale = px.colors.qualitative.Plotly
@@ -560,7 +560,7 @@ def survey_intro():
     )
     graphJSON2 = fig2.to_json()
 
-    plotly3 = pd.read_csv(r'.\static\model\third_plot.csv')
+    plotly3 = pd.read_csv(r'static\model\third_plot.csv')
     # Plot the bar chart using Plotly
     fig3 = px.bar(plotly3, x='Gender', y='Percentage', color='Answer', barmode='group',
                 labels={'Count': 'Count of Responses', 'Gender': 'Gender'})
@@ -575,14 +575,14 @@ def survey_intro():
 
 
 
-    plotly4= pd.read_csv(r'.\static\model\fourth_plot.csv')
+    plotly4= pd.read_csv(r'static\model\fourth_plot.csv')
     # Plot the bar chart using Plotly
     fig4 = px.bar(plotly4, x='Percentage', y='age_group', color='age_group', orientation='h',
                 labels={'Percentage': 'Percentage', 'age_group': 'Age Group'})
     fig4.update_layout(title='<b style = "font-size: 25px">People tend to be depressed or anxious at an early and mid adulthood period </b><br>Percentage of people who said they experience depression/anxiety by Age Group')
     graphJSON4 = fig4.to_json()
 
-    print("graphJSON1:", graphJSON1)
+    # print("graphJSON1:", graphJSON1)
     # print("graphJSON2:", graphJSON2)
     # print("graphJSON3:", graphJSON3)
     # print("graphJSON4:", graphJSON4)
