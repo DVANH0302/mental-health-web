@@ -139,7 +139,7 @@ def aboutus():
 
 
 # Use pickle to load in the pre-trained model.
-with open(f'.\static\model\model1.pkl', 'rb') as f:
+with open('static/model/model1.pkl', 'rb') as f:
     model_depression = pickle.load(f)
 
 @app.route('/Depression_survey', methods=['GET', 'POST'])
@@ -250,7 +250,7 @@ def Depression_survey():
 def music():
     return render_template('music.html')
 
-with open(f'./static/model/Stress_model.pkl', 'rb') as f:
+with open('static/model/Stress_model.pkl', 'rb') as f:
     model_stress = pickle.load(f)
 
 @app.route('/Stress_survey', methods=['GET', 'POST'])
@@ -378,7 +378,7 @@ def Stress_survey():
 
 
 ####################################################################################################
-with open(f'.\static\model\Anxiety_model.pkl', 'rb') as f:
+with open('static/model/Anxiety_model.pkl', 'rb') as f:
     model_anxiety = pickle.load(f)
 
 @app.route('/Anxiety_survey', methods=['GET', 'POST'])
